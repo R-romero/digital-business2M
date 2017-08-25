@@ -1,0 +1,20 @@
+INDEX VERSION 1.129+D:\2TDSR-Digital\.metadata\.plugins\org.eclipse.jdt.core
+2818730703.index
+473311279.index
+3498625513.index
+783292363.index
+555083994.index
+2370973609.index
+3739889120.index
+1539096771.index
+1549775516.index
+789760199.index
+2309444410.index
+181274111.index
+3931462306.index
+610267867.index
+1281468796.index
+1874169942.index
+2902042098.index
+2170793941.index
+470947420.index

@@ -1,0 +1,103 @@
+package br.com.fiap.entity;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Calendar;
+
+import javax.faces.context.FacesContext;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
+
+@Entity
+@SequenceGenerator(name="seqCliente",sequenceName="SQ_CLIENTE",allocationSize=1)
+public class Cliente {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqCliente")
+	private int codigo;
+	
+	private String nome;
+	
+	private String cpf;
+	
+	private Calendar dataNascimento;
+	
+	private int rating;
+	
+	private String foto;
+	
+	private StreamedContent foto2;
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Calendar dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public StreamedContent getFoto2() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		DefaultStreamedContent content = new DefaultStreamedContent();
+		content.setContentType("image/jpg");
+		try {
+		if (context.getRenderResponse() || cliente.getFoto() == null) {
+		content.setStream(new FileInputStream("C:\\temp\\semFoto.jpg"));
+		} else {
+		content.setStream(new FileInputStream("C:\\temp\\" + cliente.getFoto()));
+		}
+		} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		}
+		return content;
+		
+		return foto2;
+	}
+	
+}

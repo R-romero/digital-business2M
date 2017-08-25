@@ -1,0 +1,13 @@
+package br.com.fiap.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class PessoaController {
+
+	@RequestMapping("pessoa/cadastrar")
+	public String cadastro(){
+		return "pessoa/cadastro";
+	}
+}

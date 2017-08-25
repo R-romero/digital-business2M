@@ -1,0 +1,3 @@
+1503016338741	Encapsulate field 'linha'
+1503018309435	Encapsulate field 'foto'
+1503096129863	Extract method 'criaCliente'

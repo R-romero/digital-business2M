@@ -1,0 +1,12 @@
+package br.com.fiap.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("home")
+	public String index(){
+		return "home/index";
+	}
+}
